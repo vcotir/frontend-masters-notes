@@ -1,0 +1,14 @@
+# Frontend-Masters "API Design in Node.js v4"
+
+## Stack Used
+
+Express
+Prisma - an Object Relational Mapper
+
+## Updating Prisma Schema
+
+Correcting formatting issues can be done by prisma by running `npx prisma format`.
+
+## Deployment
+
+Database is deployed via [Render](https://render.com/)
