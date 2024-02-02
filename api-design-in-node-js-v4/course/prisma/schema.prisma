@@ -11,8 +11,19 @@ datasource db {
 }
 
 model User {
-  id String @id @default(uuid()) // 
-  createAt DateTime @default(now())
-  username String @unique 
+  id       String    @id @default(uuid()) // 
+  createAt DateTime  @default(now())
+  username String    @unique
   password String
+  Product  Product[]
+}
+
+model Product {
+  id       String   @id @default(uuid()) // 
+  createAt DateTime @default(now())
+
+  name        String @db.VarChar(255) // adds character size limit
+
+  belongsToId String // holds relationship to user
+  belongsTo   User   @relation(fields: [belongsToId], references: [id]) // Establishes relationship to other model
 }
